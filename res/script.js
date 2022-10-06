@@ -18,5 +18,10 @@ for(var i = 9; i <= 17; i++) {
     time.addClass("col-md-1 align-self-center");
     timeblock.append(time);
 
+    var textArea = $("<textarea>");
+    textArea.addClass("form-control col-md-10 h-100 input-field");
+    textArea.attr("id", "input-field" + i);
+    timeblock.append(textArea);
+
     timeblockContainer.append(timeblock);
 }
