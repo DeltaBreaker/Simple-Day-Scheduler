@@ -40,3 +40,10 @@ for(var i = 9; i <= 17; i++) {
 
     timeblockContainer.append(timeblock);
 }
+
+for(var i = 9; i <= 17; i++) {
+    var dataIn = localStorage.getItem("input-field" + i);
+    if(dataIn !== null) {
+        $("#input-field" + i).text(dataIn);
+    }
+}
