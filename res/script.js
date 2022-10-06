@@ -47,3 +47,34 @@ for(var i = 9; i <= 17; i++) {
         $("#input-field" + i).text(dataIn);
     }
 }
+
+setupTimeInfo();
+
+function removeTimeClasses(container) {
+    container.removeClass("past");
+    container.removeClass("present");
+    container.removeClass("future");
+}
+
+function setupTimeInfo() {
+    $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
+
+    for(var i = 9; i <= 17; i++) {
+        var timeblock = $("#" + i);
+        removeTimeClasses(timeblock);
+
+        var currentTime = 13;
+
+        if(i > currentTime) {
+            timeblock.addClass("future");
+        } else if(i < currentTime) {
+            timeblock.addClass("past");
+        } else {
+            timeblock.addClass("present");
+        }
+    }
+}
+
+var colorShift = setInterval(function() {
+   setupTimeInfo();
+}, 1000);
