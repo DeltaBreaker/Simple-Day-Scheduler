@@ -76,6 +76,7 @@ function setupTimeInfo() {
     $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
 
     for(var i = 9; i <= 17; i++) {
+        // Add .children(".input-field") to the end of the declaration below to change the text box color instead
         var timeblock = $("#" + i);
         removeTimeClasses(timeblock);
 
